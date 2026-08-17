@@ -214,6 +214,24 @@
     border-bottom: 1px solid var(--ink);
     padding-bottom: 2px;
   }
+
+  .btn-tertiary {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 13.5px;
+  color: var(--muted);
+  background: transparent;
+  border: 1px solid var(--line);
+  padding: 11px 19px;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+.btn-tertiary:hover { border-color: var(--ink); color: var(--ink); }
+.btn-tertiary.revealed {
+  border-color: var(--accent);
+  color: var(--accent);
+  cursor: text;
+}
  
   /* Section shared */
   section { padding: 70px 0; border-top: 1px solid var(--line); }
@@ -641,6 +659,7 @@
     <p>Let's talk through where your content is losing people, and build a system that actually moves the numbers.</p>
     <div class="hero-actions">
       <a class="btn-primary" href="https://calendly.com/davidefod/coaching-session" target="_blank" rel="noopener">Get in touch</a>
+      <button class="btn-tertiary" id="email-reveal" onclick="revealEmail()">Prefer email?</button>
     </div>
   </div>
 </section>
@@ -785,6 +804,13 @@
       document.querySelectorAll('.modal-overlay.open').forEach(m => closeModal(m.id));
     }
   });
+  function revealEmail() {
+  const btn = document.getElementById('email-reveal');
+  const user = ['d','a','v','i','d','e','f','o','d'].join('');
+  const domain = ['g','m','a','i','l','.','c','o','m'].join('');
+  const email = user + '@' + domain;
+  btn.outerHTML = '<a class="btn-tertiary revealed" href="mailto:' + email + '">' + email + '</a>';
+}
 </script>
  
 </body>
