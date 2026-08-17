@@ -253,6 +253,28 @@
     font-size: 12px;
     color: var(--accent);
   }
+  .card-footer {
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.card-footer .view-link { margin-top: 0; }
+.ig-link {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  color: #fff;
+  text-decoration: none;
+  padding: 6px 14px;
+  border-radius: 100px;
+  border: none;
+  background: linear-gradient(45deg, #FEDA77, #F58529, #DD2A7B, #8134AF, #515BD4);
+  transition: opacity 0.15s ease, transform 0.15s ease;
+  display: inline-block;
+}
+.ig-link:hover { opacity: 0.9; transform: translateY(-1px); }
  
   /* MODAL */
   .modal-overlay {
@@ -321,6 +343,44 @@
     align-items: center;
     justify-content: center;
   }
+
+  .modal-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  display: block;
+  margin-bottom: 10px;
+}
+.modal-section { margin-bottom: 30px; }
+.modal-section:last-of-type { margin-bottom: 0; }
+.modal-shots {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 16px 0 26px;
+}
+.shot {
+  aspect-ratio: 4 / 5;
+  background: #E9E6DC;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.shot img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.modal-cta {
+  margin-top: 6px;
+  display: inline-block;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 13.5px;
+  background: var(--ink);
+  color: var(--paper);
+  padding: 12px 22px;
+  border-radius: 100px;
+  text-decoration: none;
+  transition: background 0.15s ease;
+}
+.modal-cta:hover { background: var(--accent); }
  
   /* PROOF */
   .proof-grid {
@@ -462,9 +522,9 @@
           <span class="tag">Email Sequences</span>
           <span class="tag">Funnel Strategy</span>
         </div>
-        <span class="view-link">View case study →</span>
+         <span class="view-link">View case study →</span>
       </div>
- 
+
       <div class="work-card" onclick="openModal('modal-notionery')">
         <div class="row">
           <h3>Notionery HQ</h3>
@@ -478,9 +538,12 @@
           <span class="tag">Brand Voice</span>
           <span class="tag">Social Content</span>
         </div>
-        <span class="view-link">View case study →</span>
+        <div class="card-footer">
+          <span class="view-link">View case study →</span>
+          <a class="ig-link" href="https://www.instagram.com/notioneryhq/" target="_blank" rel="noopener" onclick="event.stopPropagation()">View on Instagram →</a>
+        </div>
       </div>
- 
+
       <div class="work-card" onclick="openModal('modal-nancyhanson')">
         <div class="row">
           <h3>Nancy Hanson</h3>
@@ -494,7 +557,10 @@
           <span class="tag">Content Strategy</span>
           <span class="tag">Luxury Fashion</span>
         </div>
-        <span class="view-link">View case study →</span>
+        <div class="card-footer">
+          <span class="view-link">View case study →</span>
+          <a class="ig-link" href="https://www.instagram.com/nancyhanson__/" target="_blank" rel="noopener" onclick="event.stopPropagation()">View on Instagram →</a>
+        </div>
       </div>
     </div>
   </div>
@@ -542,14 +608,31 @@
       <img src="images/work-succession.png" alt="Succession Story" onerror="this.parentElement.style.display='none'" />
     </div>
     <div class="modal-body">
-      <span class="status eyebrow" style="margin-bottom:6px;">Content &amp; Funnel Strategy</span>
-      <h3 class="display">Succession Story</h3>
-      <p class="modal-sub">Legacy-letter SaaS · Copywriting, paid social, email, funnel diagnosis</p>
-      <p>Succession Story helps people record what they want their family to know before they're gone. I worked across content and growth for their launch funnel, handling the copy, the messaging strategy, and the infrastructure connecting the two.</p>
-      <p>The ads were working. Strong click-through rate, healthy traffic, a squeeze page that looked clean, and almost no one converted. That combination is a message-match problem, not a design problem: the ad was earning the right attention, but the landing experience lost it immediately. We were asking people to think about "estate planning," a category most people actively avoid because it's tied to death and paperwork.</p>
-      <p>We rebuilt the entire funnel around a different pain point: emotional legacy instead of estate planning. Every piece of copy, ad hooks, squeeze page, and a three-segment email drip, was rewritten around what people actually feel uneasy about: not having said what they meant to say to the people they love.</p>
-      <p>Alongside the copy, I set up and monitored pixel tracking so every change could be measured against real conversion data instead of guesses, and the funnel started converting instead of leaking the traffic it had already paid for.</p>
+  <span class="status eyebrow" style="margin-bottom:6px;">Content &amp; Funnel Strategy</span>
+  <h3 class="display">Succession Story</h3>
+  <p class="modal-sub">Legacy-letter SaaS · Copywriting, paid social, email, funnel diagnosis</p>
+
+  <div class="modal-section">
+    <span class="modal-label">The Brief</span>
+    <p>Succession Story helps people record what they want their family to know before they're gone. The ads were working, strong click-through, healthy traffic, a clean squeeze page, and almost no one converted. That combination pointed to a message-match problem, not a design problem: the ad earned the right attention, but the landing page lost it immediately by asking people to think about "estate planning," a category most people actively avoid.</p>
+  </div>
+
+  <div class="modal-section">
+    <span class="modal-label">The Work</span>
+    <div class="modal-shots">
+      <div class="shot"><img src="images/work-succession-1.png" alt="Succession Story screenshot" onerror="this.parentElement.style.display='none'" /></div>
+      <div class="shot"><img src="images/work-succession-2.png" alt="Succession Story screenshot" onerror="this.parentElement.style.display='none'" /></div>
     </div>
+    <p>We rebuilt the entire funnel around a different pain point: emotional legacy instead of estate planning. Every piece of copy, ad hooks, squeeze page, and a three-segment email drip, was rewritten around what people actually feel uneasy about, not having said what they meant to say to the people they love. Pixel tracking was set up alongside the copy so every change could be measured against real conversion data instead of guesses.</p>
+  </div>
+
+  <div class="modal-section">
+    <span class="modal-label">The Result</span>
+    <p>The funnel started converting instead of leaking the traffic it had already paid for, incredibly focused on turning attention already earned into people who actually signed up, not just people who clicked.</p>
+  </div>
+
+  <a class="modal-cta" href="https://davidefod-portfolio.vercel.app/work/succession-story" target="_blank" rel="noopener">View project →</a>
+</div>
   </div>
 </div>
  
@@ -560,13 +643,31 @@
       <img src="images/work-notionery.png" alt="Notionery HQ" onerror="this.parentElement.style.display='none'" />
     </div>
     <div class="modal-body">
-      <span class="status eyebrow" style="margin-bottom:6px;">Content &amp; Writing</span>
-      <h3 class="display">Notionery HQ</h3>
-      <p class="modal-sub">Social content · Copywriting, brand voice</p>
-      <p>I was part of the content and writing team behind Notionery HQ's social presence, working on the captions, copy, and voice that carried the brand across its posts.</p>
-      <p>The job wasn't just writing captions that sounded nice, it was making sure every post read like it came from the same person with the same point of view, post after post. Consistency in voice is what makes a brand feel like a brand instead of a rotating cast of writers, and that consistency is what the work was built around.</p>
-      <p>This is the same discipline I'd bring to any brand's content: a defined voice, applied consistently, so the page builds recognition instead of just posting.</p>
+  <span class="status eyebrow" style="margin-bottom:6px;">Content &amp; Writing</span>
+  <h3 class="display">Notionery HQ</h3>
+  <p class="modal-sub">Social content · Copywriting, brand voice</p>
+
+  <div class="modal-section">
+    <span class="modal-label">The Brief</span>
+    <p>Notionery HQ needed its social presence to sound like one consistent voice, not a rotating cast of writers. I joined the content and writing team to help build and hold that voice across every post.</p>
+  </div>
+
+  <div class="modal-section">
+    <span class="modal-label">The Work</span>
+    <div class="modal-shots">
+      <div class="shot"><img src="images/work-notionery-1.png" alt="Notionery HQ screenshot" onerror="this.parentElement.style.display='none'" /></div>
+      <div class="shot"><img src="images/work-notionery-2.png" alt="Notionery HQ screenshot" onerror="this.parentElement.style.display='none'" /></div>
     </div>
+    <p>Writing captions and copy incredibly focused on one point of view, so the page reads like it comes from the same person every time. Voice, not just words, is what makes a brand recognizable in a feed people scroll past in seconds.</p>
+  </div>
+
+  <div class="modal-section">
+    <span class="modal-label">The Result</span>
+    <p>A page with a consistent, recognizable voice, the kind that builds familiarity instead of just posting into the void.</p>
+  </div>
+
+  <a class="modal-cta" href="https://www.instagram.com/notioneryhq/" target="_blank" rel="noopener">View on Instagram →</a>
+</div>
   </div>
 </div>
  
@@ -577,12 +678,31 @@
       <img src="images/work-nancyhanson.png" alt="Nancy Hanson" onerror="this.parentElement.style.display='none'" />
     </div>
     <div class="modal-body">
-      <span class="status eyebrow" style="margin-bottom:6px;">Content &amp; Paid Social</span>
-      <h3 class="display">Nancy Hanson</h3>
-      <p class="modal-sub">Luxury womenswear, Lagos · Meta Ads, content strategy</p>
-      <p>Nancy Hanson is a luxury womenswear label based in Lagos. I worked with the brand on a performance partnership managing Meta Ads and content, on terms tied directly to results rather than a flat retainer.</p>
-      <p>Luxury buyers don't respond to the same content that works for mass-market fashion. The strategy was built around exclusivity, craft, and story, positioning each piece and each drop as something worth wanting, not just something worth seeing, and pairing that with paid social built to reach the right audience instead of the widest one.</p>
+  <span class="status eyebrow" style="margin-bottom:6px;">Content &amp; Paid Social</span>
+  <h3 class="display">Nancy Hanson</h3>
+  <p class="modal-sub">Luxury womenswear, Lagos · Meta Ads, content strategy</p>
+
+  <div class="modal-section">
+    <span class="modal-label">The Brief</span>
+    <p>Nancy Hanson is a luxury womenswear label based in Lagos. The brand needed content and paid social that matched how luxury buyers actually decide, not the volume-driven playbook that works for mass-market fashion. I came on through a performance partnership tied directly to results.</p>
+  </div>
+
+  <div class="modal-section">
+    <span class="modal-label">The Work</span>
+    <div class="modal-shots">
+      <div class="shot"><img src="images/work-nancyhanson-1.png" alt="Nancy Hanson screenshot" onerror="this.parentElement.style.display='none'" /></div>
+      <div class="shot"><img src="images/work-nancyhanson-2.png" alt="Nancy Hanson screenshot" onerror="this.parentElement.style.display='none'" /></div>
     </div>
+    <p>Every drop and campaign positioned around exclusivity, craft, and story, incredibly focused on making each piece feel worth wanting rather than just worth seeing, paired with Meta Ads built to reach the right audience instead of the widest one.</p>
+  </div>
+
+  <div class="modal-section">
+    <span class="modal-label">The Result</span>
+    <p>Content and ads working as one system, built on a partnership structure where the work was judged on performance, not just output.</p>
+  </div>
+
+  <a class="modal-cta" href="https://www.instagram.com/nancyhanson__/" target="_blank" rel="noopener">View on Instagram →</a>
+</div>
   </div>
 </div>
  
