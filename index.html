@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>David Efod — Content & Growth</title>
+<meta name="description" content="Content and social media strategy for brands that need their marketing to convert, not just look good." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #F5F3EE;
+    --ink: #16160F;
+    --muted: #6E6C61;
+    --line: #DEDACD;
+    --accent: #1F3FA0;
+    --accent-soft: #E7EBF7;
+    --strike: #B3402F;
+    --card: #FBFAF7;
+  }
+ 
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+ 
+  html { scroll-behavior: smooth; }
+ 
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+ 
+  .display { font-family: 'Space Grotesk', sans-serif; }
+  .mono { font-family: 'IBM Plex Mono', monospace; }
+ 
+  .wrap {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+ 
+  header.site {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: rgba(245, 243, 238, 0.88);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--line);
+  }
+ 
+  header.site .wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 18px;
+    padding-bottom: 18px;
+  }
+ 
+  header.site .name {
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+ 
+  header.site a.cta-link {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    color: var(--ink);
+    text-decoration: none;
+    border: 1px solid var(--ink);
+    padding: 7px 14px;
+    border-radius: 100px;
+    transition: background 0.15s ease, color 0.15s ease;
+  }
+  header.site a.cta-link:hover { background: var(--ink); color: var(--paper); }
+ 
+  /* HERO */
+  section.hero {
+    padding: 96px 0 88px;
+  }
+ 
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    align-items: center;
+  }
+  @media (min-width: 760px) {
+    .hero-grid { grid-template-columns: 2fr 1fr; gap: 56px; }
+  }
+ 
+  .hero-photo {
+    width: 100%;
+    max-width: 340px;
+    aspect-ratio: 4 / 5;
+    border-radius: 18px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    background: var(--card);
+    justify-self: start;
+  }
+  @media (min-width: 760px) { .hero-photo { justify-self: end; } }
+  .hero-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+ 
+  .eyebrow {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12.5px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 22px;
+    display: inline-block;
+  }
+ 
+  h1.headline {
+    font-size: clamp(34px, 6vw, 56px);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.12;
+  }
+ 
+  h1.headline .old {
+    display: block;
+    color: var(--muted);
+    text-decoration: line-through;
+    text-decoration-color: var(--strike);
+    text-decoration-thickness: 2px;
+    font-weight: 500;
+  }
+ 
+  h1.headline .new {
+    display: block;
+    color: var(--accent);
+  }
+ 
+  p.lede {
+    margin-top: 28px;
+    max-width: 560px;
+    font-size: 17px;
+    color: #3A392F;
+  }
+ 
+  .hero-actions {
+    margin-top: 36px;
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+ 
+  .btn-primary {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13.5px;
+    background: var(--ink);
+    color: var(--paper);
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 100px;
+    display: inline-block;
+    transition: transform 0.15s ease, background 0.15s ease;
+  }
+  .btn-primary:hover { background: var(--accent); transform: translateY(-1px); }
+ 
+  .btn-secondary {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13.5px;
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 2px;
+  }
+ 
+  /* Section shared */
+  section { padding: 70px 0; border-top: 1px solid var(--line); }
+  section .eyebrow { margin-bottom: 14px; }
+  h2.section-title {
+    font-size: clamp(22px, 3.4vw, 30px);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin-bottom: 8px;
+  }
+  p.section-intro {
+    color: var(--muted);
+    max-width: 520px;
+    margin-bottom: 44px;
+    font-size: 15.5px;
+  }
+ 
+  /* WORK */
+  .work-list { display: flex; flex-direction: column; gap: 18px; }
+ 
+  .work-card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 26px 28px;
+    transition: border-color 0.15s ease, transform 0.15s ease;
+  }
+  .work-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+ 
+  .work-card .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+ 
+  .work-card h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 19px;
+    font-weight: 600;
+  }
+ 
+  .work-card .status {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11.5px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+ 
+  .work-card p.desc {
+    margin-top: 10px;
+    font-size: 15px;
+    color: #3A392F;
+    max-width: 620px;
+  }
+ 
+  .tags { margin-top: 16px; display: flex; gap: 8px; flex-wrap: wrap; }
+  .tag {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11.5px;
+    color: var(--accent);
+    background: var(--accent-soft);
+    padding: 4px 10px;
+    border-radius: 100px;
+  }
+ 
+  .work-card.placeholder {
+    border-style: dashed;
+    background: transparent;
+  }
+  .work-card.placeholder p.desc { color: var(--muted); font-style: italic; }
+ 
+  .work-card { cursor: pointer; }
+  .view-link {
+    margin-top: 16px;
+    display: inline-block;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: var(--accent);
+  }
+ 
+  /* MODAL */
+  .modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 14, 9, 0.55);
+    display: none;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 40px 20px;
+    overflow-y: auto;
+    z-index: 100;
+  }
+  .modal-overlay.open { display: flex; }
+ 
+  .modal {
+    background: var(--card);
+    border-radius: 18px;
+    max-width: 620px;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    animation: modalIn 0.18s ease;
+  }
+  @keyframes modalIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+ 
+  .modal-photo {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: #E9E6DC;
+    overflow: hidden;
+  }
+  .modal-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+ 
+  .modal-body { padding: 32px 32px 36px; }
+  .modal-body .status { display: block; margin-bottom: 6px; }
+  .modal-body h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+  .modal-body .modal-sub {
+    color: var(--muted);
+    font-size: 14.5px;
+    margin-bottom: 20px;
+  }
+  .modal-body p { font-size: 15px; color: #3A392F; margin-bottom: 14px; }
+  .modal-close {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    width: 34px;
+    height: 34px;
+    border-radius: 100px;
+    border: none;
+    background: rgba(22,22,15,0.65);
+    color: #fff;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+ 
+  /* PROOF */
+  .proof-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  @media (min-width: 680px) {
+    .proof-grid { grid-template-columns: 1fr 1fr; align-items: start; }
+  }
+ 
+  .video-frame {
+    position: relative;
+    width: 100%;
+    max-width: 280px;
+    aspect-ratio: 9 / 16;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    background: #0d0d0a;
+  }
+  .video-frame iframe { width: 100%; height: 100%; border: 0; }
+ 
+  blockquote.pull {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 21px;
+    line-height: 1.4;
+    font-weight: 500;
+    color: var(--ink);
+  }
+  blockquote.pull .mark { color: var(--strike); font-family: 'IBM Plex Mono', monospace; font-size: 15px; }
+  blockquote.pull footer {
+    margin-top: 16px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    color: var(--muted);
+    font-style: normal;
+  }
+ 
+  /* CTA */
+  section.cta {
+    text-align: left;
+    padding: 90px 0;
+  }
+  section.cta h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(26px, 4.6vw, 40px);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    max-width: 620px;
+  }
+  section.cta p { margin-top: 16px; color: var(--muted); max-width: 480px; font-size: 16px; }
+  section.cta .hero-actions { margin-top: 32px; }
+ 
+  /* FOOTER */
+  footer {
+    border-top: 1px solid var(--line);
+    padding: 34px 0 44px;
+  }
+  footer .wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    align-items: center;
+    justify-content: space-between;
+  }
+  footer .copy {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12.5px;
+    color: var(--muted);
+  }
+  footer .socials { display: flex; gap: 18px; }
+  footer .socials a {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12.5px;
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+  }
+  footer .socials a:hover { border-color: var(--ink); }
+ 
+  .reveal { opacity: 0; transform: translateY(14px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+ 
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; transition: none; }
+  }
+</style>
+</head>
+<body>
+ 
+<header class="site">
+  <div class="wrap">
+    <span class="name display">David Efod</span>
+    <a class="cta-link" href="https://calendly.com/davidefod/coaching-session" target="_blank" rel="noopener">Let's talk</a>
+  </div>
+</header>
+ 
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Content &amp; Growth</span>
+      <h1 class="headline display">
+        <span class="old">Marketing that just looks good.</span>
+        <span class="new">Marketing that converts.</span>
+      </h1>
+      <p class="lede">
+        I write content and manage social media for brands that want more than engagement, they want it to bring in customers. Copy, positioning, and a posting system built around what actually makes someone reach out, not just what gets a like.
+      </p>
+      <div class="hero-actions">
+        <a class="btn-primary" href="https://calendly.com/davidefod/coaching-session" target="_blank" rel="noopener">Start a project</a>
+        <a class="btn-secondary" href="#work">See the work</a>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <img src="images/hero-photo.png" alt="David Efod" />
+    </div>
+  </div>
+</section>
+ 
+<section id="work" class="reveal">
+  <div class="wrap">
+    <span class="eyebrow">Work</span>
+    <h2 class="section-title display">Case studies</h2>
+    <p class="section-intro">A mix of copywriting, funnel diagnosis, and content strategy. Real problems, real results.</p>
+ 
+    <div class="work-list">
+      <div class="work-card" onclick="openModal('modal-succession')">
+        <div class="row">
+          <h3>Succession Story</h3>
+          <span class="status">Content &amp; Funnel</span>
+        </div>
+        <p class="desc">
+          A legacy-letter platform had strong ad click-through and almost zero conversions. The problem wasn't design, it was the angle. I rewrote the funnel's copy around a new pain point, moving it from "estate planning" to "what your family will actually remember," and rebuilt the ad hooks, squeeze page, and a three-segment email drip to match.
+        </p>
+        <div class="tags">
+          <span class="tag">Copywriting</span>
+          <span class="tag">Paid Social</span>
+          <span class="tag">Email Sequences</span>
+          <span class="tag">Funnel Strategy</span>
+        </div>
+        <span class="view-link">View case study →</span>
+      </div>
+ 
+      <div class="work-card" onclick="openModal('modal-notionery')">
+        <div class="row">
+          <h3>Notionery HQ</h3>
+          <span class="status">Content &amp; Writing</span>
+        </div>
+        <p class="desc">
+          Part of the content and writing team behind Notionery HQ's social presence, developing the brand's voice and writing the captions and copy that carried it across every post.
+        </p>
+        <div class="tags">
+          <span class="tag">Copywriting</span>
+          <span class="tag">Brand Voice</span>
+          <span class="tag">Social Content</span>
+        </div>
+        <span class="view-link">View case study →</span>
+      </div>
+ 
+      <div class="work-card" onclick="openModal('modal-nancyhanson')">
+        <div class="row">
+          <h3>Nancy Hanson</h3>
+          <span class="status">Content &amp; Paid Social</span>
+        </div>
+        <p class="desc">
+          Content and Meta Ads for a Lagos-based luxury womenswear label, on a performance partnership built around what actually moves luxury buyers: exclusivity, craft, and story.
+        </p>
+        <div class="tags">
+          <span class="tag">Meta Ads</span>
+          <span class="tag">Content Strategy</span>
+          <span class="tag">Luxury Fashion</span>
+        </div>
+        <span class="view-link">View case study →</span>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<section class="reveal">
+  <div class="wrap">
+    <span class="eyebrow">Proof</span>
+    <h2 class="section-title display">What clients have said about working with me</h2>
+    <p class="section-intro">A sample of content in the field, and what a client had to say about working together.</p>
+ 
+    <div class="proof-grid">
+      <div class="video-frame">
+        <iframe
+          src="https://www.youtube.com/embed/s_C9Fa-aUDA"
+          title="Content sample"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+ 
+      <blockquote class="pull">
+        <span class="mark">&ldquo;</span>David was never the bottleneck.<span class="mark">&rdquo;</span>
+        <footer>— Romy Frazier, Esq., Texas</footer>
+      </blockquote>
+    </div>
+  </div>
+</section>
+ 
+<section class="cta reveal">
+  <div class="wrap">
+    <h2 class="display">Have a brand that needs to be seen, and heard?</h2>
+    <p>Let's talk through where your content is losing people, and build a system that actually moves the numbers.</p>
+    <div class="hero-actions">
+      <a class="btn-primary" href="https://calendly.com/davidefod/coaching-session" target="_blank" rel="noopener">Get in touch</a>
+    </div>
+  </div>
+</section>
+ 
+<!-- MODALS -->
+<div class="modal-overlay" id="modal-succession" onclick="closeOnBackdrop(event, 'modal-succession')">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('modal-succession')" aria-label="Close">✕</button>
+    <div class="modal-photo">
+      <img src="images/work-succession.png" alt="Succession Story" onerror="this.parentElement.style.display='none'" />
+    </div>
+    <div class="modal-body">
+      <span class="status eyebrow" style="margin-bottom:6px;">Content &amp; Funnel Strategy</span>
+      <h3 class="display">Succession Story</h3>
+      <p class="modal-sub">Legacy-letter SaaS · Copywriting, paid social, email, funnel diagnosis</p>
+      <p>Succession Story helps people record what they want their family to know before they're gone. I worked across content and growth for their launch funnel, handling the copy, the messaging strategy, and the infrastructure connecting the two.</p>
+      <p>The ads were working. Strong click-through rate, healthy traffic, a squeeze page that looked clean, and almost no one converted. That combination is a message-match problem, not a design problem: the ad was earning the right attention, but the landing experience lost it immediately. We were asking people to think about "estate planning," a category most people actively avoid because it's tied to death and paperwork.</p>
+      <p>We rebuilt the entire funnel around a different pain point: emotional legacy instead of estate planning. Every piece of copy, ad hooks, squeeze page, and a three-segment email drip, was rewritten around what people actually feel uneasy about: not having said what they meant to say to the people they love.</p>
+      <p>Alongside the copy, I set up and monitored pixel tracking so every change could be measured against real conversion data instead of guesses, and the funnel started converting instead of leaking the traffic it had already paid for.</p>
+    </div>
+  </div>
+</div>
+ 
+<div class="modal-overlay" id="modal-notionery" onclick="closeOnBackdrop(event, 'modal-notionery')">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('modal-notionery')" aria-label="Close">✕</button>
+    <div class="modal-photo">
+      <img src="images/work-notionery.png" alt="Notionery HQ" onerror="this.parentElement.style.display='none'" />
+    </div>
+    <div class="modal-body">
+      <span class="status eyebrow" style="margin-bottom:6px;">Content &amp; Writing</span>
+      <h3 class="display">Notionery HQ</h3>
+      <p class="modal-sub">Social content · Copywriting, brand voice</p>
+      <p>I was part of the content and writing team behind Notionery HQ's social presence, working on the captions, copy, and voice that carried the brand across its posts.</p>
+      <p>The job wasn't just writing captions that sounded nice, it was making sure every post read like it came from the same person with the same point of view, post after post. Consistency in voice is what makes a brand feel like a brand instead of a rotating cast of writers, and that consistency is what the work was built around.</p>
+      <p>This is the same discipline I'd bring to any brand's content: a defined voice, applied consistently, so the page builds recognition instead of just posting.</p>
+    </div>
+  </div>
+</div>
+ 
+<div class="modal-overlay" id="modal-nancyhanson" onclick="closeOnBackdrop(event, 'modal-nancyhanson')">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('modal-nancyhanson')" aria-label="Close">✕</button>
+    <div class="modal-photo">
+      <img src="images/work-nancyhanson.png" alt="Nancy Hanson" onerror="this.parentElement.style.display='none'" />
+    </div>
+    <div class="modal-body">
+      <span class="status eyebrow" style="margin-bottom:6px;">Content &amp; Paid Social</span>
+      <h3 class="display">Nancy Hanson</h3>
+      <p class="modal-sub">Luxury womenswear, Lagos · Meta Ads, content strategy</p>
+      <p>Nancy Hanson is a luxury womenswear label based in Lagos. I worked with the brand on a performance partnership managing Meta Ads and content, on terms tied directly to results rather than a flat retainer.</p>
+      <p>Luxury buyers don't respond to the same content that works for mass-market fashion. The strategy was built around exclusivity, craft, and story, positioning each piece and each drop as something worth wanting, not just something worth seeing, and pairing that with paid social built to reach the right audience instead of the widest one.</p>
+    </div>
+  </div>
+</div>
+ 
+<footer>
+  <div class="wrap">
+    <span class="copy">© 2026 David Efod</span>
+    <div class="socials">
+      <a href="https://github.com/efodthe2nd" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/david-efod-27682b151/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://x.com/efoddavid" target="_blank" rel="noopener">X</a>
+    </div>
+  </div>
+</footer>
+ 
+<script>
+  const items = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  items.forEach(el => io.observe(el));
+ 
+  function openModal(id) {
+    document.getElementById(id).classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal(id) {
+    document.getElementById(id).classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  function closeOnBackdrop(e, id) {
+    if (e.target.id === id) closeModal(id);
+  }
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.modal-overlay.open').forEach(m => closeModal(m.id));
+    }
+  });
+</script>
+ 
+</body>
+</html>
